@@ -1,149 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shivam Juice Center</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shivam Juice Center</title>
+  <meta name="description" content="Modern responsive juice shop website for Shivam Juice Center.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="logo">
-    <img src="images/logo.png" alt="Logo">
-    <span>Shivam Juice Center</span>
-</div>
-
-
-    <ul class="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-
-    <div class="cart-icon" onclick="toggleCart()">
-        🛒 <span id="cart-count">0</span>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">🍹 Shivam Juice Center</a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cart">Cart <span class="cart-pill" id="cartCount">0</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<!-- HERO SLIDER -->
-<section class="hero" id="home">
-
-    <div class="slider">
-        <div class="slides">
-            <img src="images/orange.jpg" class="slide active" alt="Orange Juice">
-            <img src="images/mango.jpg" class="slide" alt="Mango Juice">
-            <img src="images/watermelon.jpg" class="slide" alt="Watermelon Juice">
-            <img src="images/pineapple.jpg" class="slide" alt="Pineapple Juice">
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <div class="hero-content fade-in">
+              <div class="section-tag hero-chip"><i class="bi bi-cup-straw"></i> Freshly blended every day</div>
+              <h1 class="hero-title">Fresh • Healthy • Refreshing</h1>
+              <p class="hero-text">Discover vibrant fruit juices, creamy shakes, and seasonal blends crafted to energize your day with real flavor and real freshness.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#menu" class="btn btn-juice">Order Now</a>
+                <button class="btn btn-juice-outline" data-bs-toggle="modal" data-bs-target="#promoModal">View Today's Special</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-panel fade-in">
+              <div class="row g-3">
+                <div class="col-sm-6"><div class="mini-card"><div class="stat-number">20+</div><p class="mb-0 text-muted">Refreshing drinks served daily</p></div></div>
+                <div class="col-sm-6"><div class="mini-card"><div class="stat-number">100%</div><p class="mb-0 text-muted">Fresh fruit ingredients</p></div></div>
+                <div class="col-12">
+                  <div class="mini-card">
+                    <h3 class="h4 fw-bold mb-2">Seasonal Favorites</h3>
+                    <p class="text-muted mb-3">Mango Blast, Pineapple Punch, and Banana Shake made with chilled, premium ingredients.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="badge rounded-pill text-bg-warning px-3 py-2">No Preservatives</span>
+                      <span class="badge rounded-pill text-bg-success px-3 py-2">Quick Pickup</span>
+                      <span class="badge rounded-pill text-bg-light px-3 py-2">Custom Sweetness</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="about-visual fade-in">
+              <div class="about-badge">
+                <strong class="d-block mb-1">Shivam Juice Center</strong>
+                Fresh fruit, quick service, and a neighborhood vibe you can taste.
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 fade-in">
+            <div class="section-tag"><i class="bi bi-heart-pulse-fill"></i> About Us</div>
+            <h2 class="section-title">A colorful corner for juice lovers</h2>
+            <p class="section-copy mb-4">Shivam Juice Center brings together handpicked fruits, chilled blends, and made-to-order recipes that feel light, natural, and satisfying.</p>
+            <div class="row g-3">
+              <div class="col-sm-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-droplet-half"></i></div><h3 class="h5 fw-bold">Fresh Ingredients</h3><p class="text-muted mb-0">Prepared from ripe fruits and chilled instantly.</p></div></div>
+              <div class="col-sm-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-lightning-charge-fill"></i></div><h3 class="h5 fw-bold">Fast Service</h3><p class="text-muted mb-0">Quick takeaway and easy ordering.</p></div></div>
+              <div class="col-sm-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-emoji-smile-fill"></i></div><h3 class="h5 fw-bold">Custom Blends</h3><p class="text-muted mb-0">Adjust sweetness and ice level.</p></div></div>
+              <div class="col-sm-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-bag-heart-fill"></i></div><h3 class="h5 fw-bold">Healthy Choice</h3><p class="text-muted mb-0">A vibrant menu for energizing refreshment.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-4 mb-5">
+          <div>
+            <div class="section-tag"><i class="bi bi-grid-fill"></i> Our Menu</div>
+            <h2 class="section-title">Fresh picks for every craving</h2>
+            <p class="section-copy mb-0">Browse vibrant juices, search favorites, or filter by category before adding them to the cart.</p>
+          </div>
+          <div class="w-100 menu-tools">
+            <div class="search-box">
+              <i class="bi bi-search"></i>
+              <input type="text" class="form-control search-input" id="searchInput" placeholder="Search for mango, shake, citrus...">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="juice">Juices</button>
+          <button class="filter-chip" data-filter="shake">Shakes</button>
+          <button class="filter-chip" data-filter="citrus">Citrus</button>
+          <button class="filter-chip" data-filter="fruit">Fruit Mix</button>
+        </div>
+
+        <div class="row g-4" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <section id="cart">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-8">
+            <div class="cart-card fade-in">
+              <div class="cart-header">
+                <div>
+                  <div class="section-tag mb-2"><i class="bi bi-cart3"></i> Your Cart</div>
+                  <h2 class="h2 fw-bold mb-0">Ready to checkout?</h2>
+                </div>
+                <button class="btn btn-outline-danger rounded-pill px-4" id="clearCartBtn">Clear Cart</button>
+              </div>
+              <div id="cartItems" class="cart-list"></div>
+              <div id="emptyCart" class="empty-state">
+                <i class="bi bi-basket2 display-6 d-block mb-3"></i>
+                Your cart is empty. Add a few fresh drinks from the menu to begin.
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="cart-card fade-in">
+              <h3 class="h4 fw-bold mb-3">Order Summary</h3>
+              <div class="summary-box">
+                <div class="d-flex justify-content-between mb-2"><span>Items</span><strong id="summaryItems">0</strong></div>
+                <div class="d-flex justify-content-between mb-2"><span>Delivery</span><strong>Free</strong></div>
+                <div class="d-flex justify-content-between pt-2 border-top"><span class="fw-semibold">Total</span><strong class="fs-4 text-success" id="summaryTotal">Rs 0</strong></div>
+              </div>
+              <button class="btn btn-juice w-100 mt-4" data-bs-toggle="modal" data-bs-target="#checkoutModal">Proceed to Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="login">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="login-card fade-in">
+              <div class="text-center mb-4">
+                <div class="section-tag justify-content-center"><i class="bi bi-person-circle"></i> Login</div>
+                <h2 class="section-title mb-2">Welcome back</h2>
+                <p class="section-copy mx-auto">Sign in to save your favorites, speed up future orders, and get exclusive juice offers.</p>
+              </div>
+              <form>
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-semibold">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-4">
+                  <label for="password" class="form-label fw-semibold">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-juice w-100">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <h3 class="h4 fw-bold text-white">Shivam Juice Center</h3>
+          <p class="mb-2">Fresh juices, fruit blends, and healthy sips served with vibrant flavor every day.</p>
+          <p class="mb-0">Address: MG Road, Fresh Market Corner, Pune, Maharashtra</p>
+        </div>
+        <div class="col-lg-4">
+          <p class="mb-2"><strong>Contact:</strong> +91 98765 43210</p>
+          <p class="mb-2"><strong>Email:</strong> hello@shivamjuicecenter.com</p>
+          <p class="mb-0"><strong>Hours:</strong> 8:00 AM to 10:00 PM</p>
+        </div>
+        <div class="col-lg-3">
+          <div class="d-flex gap-2 justify-content-lg-end">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
+  </footer>
 
-    <div class="hero-content">
-        <h1>Fresh • Natural • Healthy</h1>
-        <p>100% Freshly Squeezed Juices Everyday</p>
-        <button onclick="scrollToMenu()">Explore Menu</button>
+  <div class="position-fixed top-0 end-0 p-3 toast-wrap">
+    <div id="cartToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body fw-semibold text-success" id="toastMessage">Item added to cart.</div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
     </div>
+  </div>
 
-</section>
-
-<!-- PRODUCTS -->
-<section class="products" id="menu">
-    <h2>Our Fresh Juices</h2>
-
-    <div class="product-grid">
-
-    <div class="card">
-        <img src="images/mango.png" alt="Mango Juice">
-        <h3>Mango</h3>
-        <p>₹40</p>
-        <button onclick="addToCart('Mango',40)">Add to Cart</button>
+  <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-4 p-md-5 text-center">
+          <span class="section-tag justify-content-center"><i class="bi bi-stars"></i> Today's Special</span>
+          <h3 id="promoModalLabel" class="fw-bold mb-3">Mixed Fruit Energy Combo</h3>
+          <p class="text-muted mb-4">Order any 2 mixed fruit drinks today and enjoy an extra 10% off at Shivam Juice Center.</p>
+          <a href="#menu" class="btn btn-juice" data-bs-dismiss="modal">Explore Menu</a>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="card">
-        <img src="images/orange.png" alt="Orange Juice">
-        <h3>Orange</h3>
-        <p>₹30</p>
-        <button onclick="addToCart('Orange',30)">Add to Cart</button>
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-4 p-md-5 text-center">
+          <span class="section-tag justify-content-center"><i class="bi bi-check-circle-fill"></i> Order Ready</span>
+          <h3 id="checkoutModalLabel" class="fw-bold mb-3">Your order is being prepared</h3>
+          <p class="text-muted mb-4">This is a demo checkout flow. Your selected juices are saved in the cart and ready for UI showcase.</p>
+          <button class="btn btn-juice" data-bs-dismiss="modal">Continue Browsing</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="card">
-        <img src="images/apple.png" alt="Apple Juice">
-        <h3>Apple</h3>
-        <p>₹50</p>
-        <button onclick="addToCart('Apple',50)">Add to Cart</button>
-    </div>
-
-    <div class="card">
-        <img src="images/pineapple.png" alt="Pineapple Juice">
-        <h3>Pineapple</h3>
-        <p>₹35</p>
-        <button onclick="addToCart('Pineapple',35)">Add to Cart</button>
-    </div>
-
-    <div class="card">
-        <img src="images/watermelon.png" alt="Watermelon Juice">
-        <h3>Watermelon</h3>
-        <p>₹25</p>
-        <button onclick="addToCart('Watermelon',25)">Add to Cart</button>
-    </div>
-
-    <div class="card">
-        <img src="images/muskmelon.png" alt="Muskmelon Juice">
-        <h3>Muskmelon</h3>
-        <p>₹30</p>
-        <button onclick="addToCart('Muskmelon',30)">Add to Cart</button>
-    </div>
-
-    <div class="card">
-        <img src="images/pomegranate.png" alt="Pomegranate Juice">
-        <h3>Pomegranate</h3>
-        <p>₹60</p>
-        <button onclick="addToCart('Pomegranate',60)">Add to Cart</button>
-    </div>
-
-    <div class="card">
-        <img src="images/mixedfruit.png" alt="Mixed Fruit Juice">
-        <h3>Mixed Fruit</h3>
-        <p>₹55</p>
-        <button onclick="addToCart('Mixed Fruit',55)">Add to Cart</button>
-    </div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-    <h2>About Us</h2>
-    <p>
-        Shivam Juice Center is dedicated to serving fresh, hygienic and healthy juices.
-        We use only premium quality fruits to deliver natural taste and freshness.
-        Our mission is to provide affordable and healthy beverages to everyone.
-    </p>
-</section>
-
-<!-- CART -->
-<div class="cart-panel" id="cart">
-    <h3>Your Cart</h3>
-    <ul id="cart-items"></ul>
-    <p><strong>Total: ₹<span id="total">0</span></strong></p>
-    <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
-</div>
-
-<!-- CHECKOUT MODAL -->
-<div class="modal" id="checkoutModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeCheckout()">❌</span>
-        <h2>Checkout</h2>
-        <p>Total Amount: ₹<span id="checkoutTotal">0</span></p>
-        <button onclick="confirmOrder()">Confirm Order</button>
-    </div>
-</div>
-
-<footer>
-    © 2026 Shivam Juice Center | Pune
-</footer>
-
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
