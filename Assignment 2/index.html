@@ -1,128 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anuj Ahire | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuj Ahire | Web Developer</title>
+  <meta
+    name="description"
+    content="Personal portfolio of Anuj Ahire, a Web Developer from Pune, Maharashtra, India."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="card">
-
-    <!-- Header with Photo -->
-    <header class="header fade-in">
-      <div class="header-text">
-        <h1>Anuj Ahire</h1>
-        <p class="title">Web Developer</p>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#home">Anuj Ahire</a>
+      <button
+        class="navbar-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#portfolioNav"
+        aria-controls="portfolioNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="portfolioNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
+              <i class="bi bi-sun-fill" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
       </div>
-
-      <div class="header-photo">
-        <img src="profile.jpg.png" alt="Anuj Ahire" />
-      </div>
-    </header>
-
-    <!-- Personal Info -->
-    <section class="info slide-up">
-      <p><span>Email:</span> anujahire2606@gmail.com</p>
-      <p><span>Phone:</span> 9209163337</p>
-      <p><span>Birthday:</span> 26/06/2004</p>
-      <p><span>Location:</span> Pune, Maharashtra, India</p>
-    </section>
-
-    <hr />
-
-    <!-- About Me -->
-    <section class="section fade-in">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate web developer who enjoys creating responsive,
-        visually appealing, and user-friendly websites. I like turning
-        ideas into real-world digital solutions.
-      </p>
-    </section>
-
-    <hr />
-
-    <!-- Resume -->
-    <section class="section slide-up">
-      <h2>Resume</h2>
-
-      <h3>Education</h3>
-
-<div class="education">
-  <div class="edu-row">
-    <div class="edu-year">2023 – 2027</div>
-    <div class="edu-details">
-      <strong>Pimpri Chinchwad College of Engineering, Pune</strong><br />
-      B.Tech in Computer Engineering (Regional Language)
     </div>
-  </div>
+  </nav>
 
-  <div class="edu-row">
-    <div class="edu-year">2021 – 2023</div>
-    <div class="edu-details">
-      <strong>Late B.G. Barve Junior College, Malegaon</strong><br />
-      Higher Secondary Certificate Examination, Science Stream<br />
-      76 %
-    </div>
-  </div>
-
-  <div class="edu-row">
-    <div class="edu-year">2020</div>
-    <div class="edu-details">
-      <strong>Rajiv Gandhi International School, Malegaon</strong><br />
-      Secondary School Certificate Examination<br />
-      82 %
-    </div>
-  </div>
-</div>
-
-     
-
-      <h3>My Skills</h3>
-      <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>React</span>
-        <span>Node.js</span>
-        <span>MySQL</span>
-        <span>Git</span>
-        <span>Java</span>
-        <span>C++</span>
-        <span>Python</span>
-        
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <div class="reveal">
+              <div class="hero-badge">
+                <i class="bi bi-stars"></i>
+                Available for internships and placements
+              </div>
+              <h1>Hi, I'm <span class="gradient-text">Anuj Ahire</span></h1>
+              <h2 class="h3 fw-semibold mb-3">Web Developer</h2>
+              <div class="typing-text">I'm a <span id="typedText"></span><span class="gradient-text">|</span></div>
+              <p class="lead muted-text">
+                I am a passionate web developer who enjoys creating responsive, visually appealing,
+                and user-friendly websites. I like turning ideas into real-world digital solutions.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a class="btn btn-custom-primary" href="#" id="downloadResume">Download Resume</a>
+                <a class="btn btn-custom-outline" href="#contact">Contact Me</a>
+              </div>
+              <div class="social-links">
+                <a class="social-link" href="https://www.linkedin.com/in/anujahire/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a class="social-link" href="https://github.com/Anujj26" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="bi bi-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-card glass-card reveal">
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="stat-item text-center">
+                    <h3>10+</h3>
+                    <p class="mb-0 muted-text">Core technologies explored</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-item text-center">
+                    <h3>4</h3>
+                    <p class="mb-0 muted-text">Featured projects</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-item text-center">
+                    <h3>2027</h3>
+                    <p class="mb-0 muted-text">Expected graduation</p>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="stat-item text-start">
+                    <p class="text-uppercase small mb-2 muted-text">Currently based in</p>
+                    <h4 class="mb-1">Pune, Maharashtra</h4>
+                    <p class="mb-0 muted-text">Building polished, responsive web experiences.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <hr />
-
-    <!-- Portfolio -->
-    <section class="section fade-in">
-      <h2>Portfolio</h2>
-      <ul class="projects">
-        <li>E-Waste Management System</li>
-        <li>Blood Donation Management System</li>
-        <li>Smart Contract Application</li>
-        <li>Student Engagement Analysis System</li>
-      </ul>
+    <section id="about">
+      <div class="container">
+        <div class="mb-5 reveal">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            A developer focused on blending clean functionality with engaging visual experiences.
+          </p>
+        </div>
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <div class="profile-frame glass-card reveal">
+              <img src="profile.jpg.png" alt="Portrait of Anuj Ahire" class="profile-photo">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="glass-card p-4 p-lg-5 reveal">
+              <p class="fs-5 muted-text mb-4">
+                I am a passionate web developer who enjoys creating responsive, visually appealing,
+                and user-friendly websites. I like turning ideas into real-world digital solutions.
+              </p>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="detail-item">
+                    <span class="detail-label">Email</span>
+                    <a class="text-decoration-none text-reset" href="mailto:anujahire2606@gmail.com">anujahire2606@gmail.com</a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="detail-item">
+                    <span class="detail-label">Phone</span>
+                    <a class="text-decoration-none text-reset" href="tel:+919209163337">9209163337</a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="detail-item">
+                    <span class="detail-label">Birthday</span>
+                    <span>26/06/2004</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="detail-item">
+                    <span class="detail-label">Location</span>
+                    <span>Pune, Maharashtra, India</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      © 2026 Anuj Ahire
-    </footer>
+    <section id="skills">
+      <div class="container">
+        <div class="mb-5 reveal">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">
+            A practical stack for building modern interfaces, handling logic, and shipping complete web solutions.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>HTML</span><span class="skill-value">95%</span></div><div class="progress-track"><div class="progress-fill" data-width="95%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>CSS</span><span class="skill-value">92%</span></div><div class="progress-track"><div class="progress-fill" data-width="92%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>JavaScript</span><span class="skill-value">88%</span></div><div class="progress-track"><div class="progress-fill" data-width="88%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>React</span><span class="skill-value">82%</span></div><div class="progress-track"><div class="progress-fill" data-width="82%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>Node.js</span><span class="skill-value">80%</span></div><div class="progress-track"><div class="progress-fill" data-width="80%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>MySQL</span><span class="skill-value">78%</span></div><div class="progress-track"><div class="progress-fill" data-width="78%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>Git</span><span class="skill-value">84%</span></div><div class="progress-track"><div class="progress-fill" data-width="84%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>Java</span><span class="skill-value">76%</span></div><div class="progress-track"><div class="progress-fill" data-width="76%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>C++</span><span class="skill-value">74%</span></div><div class="progress-track"><div class="progress-fill" data-width="74%"></div></div></div></div>
+          <div class="col-md-6 col-xl-4"><div class="skill-card glass-card reveal"><div class="skill-meta"><span>Python</span><span class="skill-value">72%</span></div><div class="progress-track"><div class="progress-fill" data-width="72%"></div></div></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="resume">
+      <div class="container">
+        <div class="mb-5 reveal">
+          <h2 class="section-title">Resume</h2>
+          <p class="section-subtitle">
+            Academic milestones that shaped my technical foundation and problem-solving approach.
+          </p>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-card glass-card">
+              <div class="timeline-year">2023 - 2027</div>
+              <h3 class="h4">Pimpri Chinchwad College of Engineering, Pune</h3>
+              <p class="mb-0 muted-text">B.Tech in Computer Engineering (Regional Language)</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-card glass-card">
+              <div class="timeline-year">2021 - 2023</div>
+              <h3 class="h4">Late B.G. Barve Junior College, Malegaon</h3>
+              <p class="mb-0 muted-text">HSC (Science) - 76%</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-card glass-card">
+              <div class="timeline-year">2020</div>
+              <h3 class="h4">Rajiv Gandhi International School, Malegaon</h3>
+              <p class="mb-0 muted-text">SSC - 82%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </div>
+    <section id="projects">
+      <div class="container">
+        <div class="mb-5 reveal">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">
+            Selected concepts and systems focused on real-world impact, smart workflows, and meaningful user experiences.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="project-card glass-card reveal">
+              <h3 class="h4">E-Waste Management System</h3>
+              <p>A web-based platform designed to streamline e-waste collection, promote responsible disposal, and connect users with efficient recycling workflows.</p>
+              <div class="badge-stack">
+                <span class="badge-tech">HTML</span>
+                <span class="badge-tech">CSS</span>
+                <span class="badge-tech">JavaScript</span>
+                <span class="badge-tech">MySQL</span>
+              </div>
+              <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-custom-primary" href="https://github.com/Anujj26" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="btn btn-custom-outline" href="#" aria-label="Live demo for E-Waste Management System">Live Demo</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="project-card glass-card reveal">
+              <h3 class="h4">Blood Donation Management System</h3>
+              <p>A centralized solution for managing donor records, matching urgent blood requests, and improving communication between donors, recipients, and organizers.</p>
+              <div class="badge-stack">
+                <span class="badge-tech">React</span>
+                <span class="badge-tech">Node.js</span>
+                <span class="badge-tech">Bootstrap</span>
+                <span class="badge-tech">MySQL</span>
+              </div>
+              <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-custom-primary" href="https://github.com/Anujj26" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="btn btn-custom-outline" href="#" aria-label="Live demo for Blood Donation Management System">Live Demo</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="project-card glass-card reveal">
+              <h3 class="h4">Smart Contract Application</h3>
+              <p>A blockchain-oriented application exploring secure transactions, automated logic execution, and transparent digital agreements through smart contract workflows.</p>
+              <div class="badge-stack">
+                <span class="badge-tech">JavaScript</span>
+                <span class="badge-tech">Web3</span>
+                <span class="badge-tech">Solidity</span>
+                <span class="badge-tech">Node.js</span>
+              </div>
+              <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-custom-primary" href="https://github.com/Anujj26" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="btn btn-custom-outline" href="#" aria-label="Live demo for Smart Contract Application">Live Demo</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="project-card glass-card reveal">
+              <h3 class="h4">Student Engagement Analysis System</h3>
+              <p>A data-driven platform built to evaluate student participation trends, visualize engagement patterns, and support better academic decision-making.</p>
+              <div class="badge-stack">
+                <span class="badge-tech">Python</span>
+                <span class="badge-tech">Dashboarding</span>
+                <span class="badge-tech">MySQL</span>
+                <span class="badge-tech">Analytics</span>
+              </div>
+              <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-custom-primary" href="https://github.com/Anujj26" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="btn btn-custom-outline" href="#" aria-label="Live demo for Student Engagement Analysis System">Live Demo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact">
+      <div class="container">
+        <div class="mb-5 reveal">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            Let’s connect for internships, collaborations, or opportunities to build impactful digital products.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="contact-card glass-card reveal">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                <div>
+                  <h3 class="h5 mb-1">Email</h3>
+                  <a class="text-decoration-none text-reset" href="mailto:anujahire2606@gmail.com">anujahire2606@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                <div>
+                  <h3 class="h5 mb-1">Phone</h3>
+                  <a class="text-decoration-none text-reset" href="tel:+919209163337">9209163337</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                  <h3 class="h5 mb-1">Location</h3>
+                  <p class="mb-0 contact-text">Pune, Maharashtra, India</p>
+                </div>
+              </div>
+              <div class="social-links mt-4">
+                <a class="social-link" href="https://www.linkedin.com/in/anujahire/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a class="social-link" href="https://github.com/Anujj26" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="contact-card glass-card reveal">
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-control" type="text" id="name" placeholder="Your name">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" id="email" placeholder="your@email.com">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="6" placeholder="Tell me about your idea or opportunity"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-custom-primary" type="submit">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <p class="mb-0 muted-text">© 2026 Anuj Ahire. All rights reserved.</p>
+        <div class="social-links">
+          <a class="social-link" href="https://www.linkedin.com/in/anujahire/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a class="social-link" href="https://github.com/Anujj26" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const body = document.body;
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const downloadResume = document.getElementById("downloadResume");
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      const typedText = document.getElementById("typedText");
+      const roles = ["Developer", "Programmer", "Tech Enthusiast"];
+      const reveals = document.querySelectorAll(".reveal");
+      const progressBars = document.querySelectorAll(".progress-fill");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("main section");
+      const backToTop = document.getElementById("backToTop");
+
+      /* Persist the preferred theme so the portfolio feels polished across visits. */
+      function applyTheme(theme) {
+        const isLight = theme === "light";
+        body.classList.toggle("light-mode", isLight);
+        themeIcon.className = isLight ? "bi bi-moon-stars-fill" : "bi bi-sun-fill";
+        localStorage.setItem("portfolio-theme", theme);
+      }
+
+      applyTheme(savedTheme || "dark");
+
+      themeToggle.addEventListener("click", function () {
+        applyTheme(body.classList.contains("light-mode") ? "dark" : "light");
+      });
+
+      let roleIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      /* Lightweight typing effect without pulling in an extra library. */
+      function typeEffect() {
+        const currentRole = roles[roleIndex];
+        typedText.textContent = deleting
+          ? currentRole.slice(0, charIndex--)
+          : currentRole.slice(0, charIndex++);
+
+        if (!deleting && charIndex === currentRole.length + 1) {
+          deleting = true;
+          setTimeout(typeEffect, 1300);
+          return;
+        }
+
+        if (deleting && charIndex === -1) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+
+        setTimeout(typeEffect, deleting ? 60 : 120);
+      }
+
+      typeEffect();
+
+      downloadResume.addEventListener("click", function (event) {
+        event.preventDefault();
+        const resumeContent = [
+          "Anuj Ahire",
+          "Web Developer",
+          "",
+          "Email: anujahire2606@gmail.com",
+          "Phone: 9209163337",
+          "Birthday: 26/06/2004",
+          "Location: Pune, Maharashtra, India",
+          "LinkedIn: https://www.linkedin.com/in/anujahire/",
+          "GitHub: https://github.com/Anujj26",
+          "",
+          "About Me:",
+          "I am a passionate web developer who enjoys creating responsive, visually appealing, and user-friendly websites. I like turning ideas into real-world digital solutions.",
+          "",
+          "Education:",
+          "2023-2027 - Pimpri Chinchwad College of Engineering, Pune - B.Tech in Computer Engineering (Regional Language)",
+          "2021-2023 - Late B.G. Barve Junior College, Malegaon - HSC (Science) - 76%",
+          "2020 - Rajiv Gandhi International School, Malegaon - SSC - 82%",
+          "",
+          "Skills:",
+          "HTML, CSS, JavaScript, React, Node.js, MySQL, Git, Java, C++, Python",
+          "",
+          "Projects:",
+          "E-Waste Management System",
+          "Blood Donation Management System",
+          "Smart Contract Application",
+          "Student Engagement Analysis System"
+        ].join("\n");
+
+        const blob = new Blob([resumeContent], { type: "text/plain" });
+        const fileUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = "Anuj-Ahire-Resume.txt";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(fileUrl);
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              entry.target.querySelectorAll(".progress-fill").forEach((bar) => {
+                bar.style.width = bar.dataset.width;
+              });
+            }
+          });
+        },
+        { threshold: 0.18 }
+      );
+
+      reveals.forEach((item) => revealObserver.observe(item));
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => {
+                link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+              });
+            }
+          });
+        },
+        { threshold: 0.55 }
+      );
+
+      sections.forEach((section) => sectionObserver.observe(section));
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (event) {
+          const targetId = this.getAttribute("href");
+          if (targetId.length > 1) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              event.preventDefault();
+              targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        });
+      });
+
+      window.addEventListener("scroll", function () {
+        backToTop.classList.toggle("show", window.scrollY > 350);
+      });
+
+      backToTop.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      progressBars.forEach((bar) => {
+        if (bar.closest(".reveal.active")) {
+          bar.style.width = bar.dataset.width;
+        }
+      });
+    });
+  </script>
 </body>
-<div class="social-links">
-  <a href="https://www.linkedin.com/in/anujahire/" target="_blank">
-    LinkedIn
-  </a>
-  <a href="https://github.com/Anujj26" target="_blank">
-    GitHub
-  </a>
-</div>
-
 </html>
+
