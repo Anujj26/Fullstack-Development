@@ -3,126 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospital Emergency Monitoring Dashboard</title>
+  <title>Juice Shop Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-shell">
+  <div class="app-shell">
     <aside class="sidebar">
-      <div>
-        <p class="eyebrow">mCityCare Network</p>
-        <h1>Emergency  Center</h1>
-        <p class="sidebar-copy">
-          Monitor patient load, admissions pressure, active emergency departments.
-        </p>
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-glass-water-droplet"></i>
+        </div>
+        <div>
+          <h2>JuiceFlow</h2>
+          <p>Fresh sales insights</p>
+        </div>
       </div>
 
-      <div class="control-panel">
-        <div class="control-block">
-          <label for="hospitalSelect">Hospital</label>
-          <select id="hospitalSelect">
-            <option value="all">All hospitals</option>
-          </select>
-        </div>
+      <nav class="menu">
+        <a class="menu-item active" href="#">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a class="menu-item" href="#">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Sales</span>
+        </a>
+        <a class="menu-item" href="#">
+          <i class="fa-solid fa-apple-whole"></i>
+          <span>Products</span>
+        </a>
+        <a class="menu-item" href="#">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Reports</span>
+        </a>
+      </nav>
 
-        <div class="control-block">
-          <label for="timeRange">Time range</label>
-          <input id="timeRange" type="range" min="6" max="24" step="6" value="24">
-          <div class="range-labels">
-            <span>6h</span>
-            <strong id="timeRangeValue">24h</strong>
-            <span>24h</span>
-          </div>
-        </div>
-
-        <div class="control-block">
-          <span class="control-title">Department focus</span>
-          <div class="chip-group" id="departmentFilters"></div>
-        </div>
-
-        <button class="ghost-button" id="refreshButton" type="button">Simulate Live Refresh</button>
-      </div>
-
-      <div class="alert-panel">
-        <p class="alert-kicker">Operational Alert</p>
-        <h2 id="alertTitle">Loading live triage insight...</h2>
-        <p id="alertCopy"></p>
+      <div class="sidebar-highlight">
+        <h3>Today's Best Seller</h3>
+        <p id="sidebarBestSeller">Orange Juice</p>
       </div>
     </aside>
 
-    <main class="dashboard">
-      <section class="hero">
+    <div class="main-content">
+      <header class="topbar">
         <div>
-          <p class="eyebrow">Real-time ED performance</p>
-          <h2>Hospital Emergency Monitoring Dashboard</h2>
+          <p class="topbar-label">Business Overview</p>
+          <h1>Juice Shop Dashboard</h1>
         </div>
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          Updated <span id="lastUpdated">just now</span>
-        </div>
-      </section>
 
-      <section class="stats-grid" id="statsGrid"></section>
+        <button id="refreshBtn" class="refresh-btn">
+          <i class="fa-solid fa-rotate-right"></i>
+          <span>Refresh Data</span>
+        </button>
+      </header>
 
-      <section class="charts-grid">
-        <article class="panel panel-wide">
-          <div class="panel-header">
+      <main class="dashboard-grid">
+        <section class="card revenue-card">
+          <div class="card-header">
             <div>
-              <p class="panel-kicker">Inbound flow</p>
-              <h3>Arrivals vs admissions</h3>
+              <p class="eyebrow">Total Revenue</p>
+              <h2 id="totalRevenue">₹0</h2>
             </div>
-            <p class="panel-note">Tracks emergency intake and beds converted to admissions.</p>
-          </div>
-          <canvas id="arrivalsChart"></canvas>
-        </article>
-
-        <article class="panel">
-          <div class="panel-header">
-            <div>
-              <p class="panel-kicker">Patient mix</p>
-              <h3>Triage severity distribution</h3>
+            <div class="icon-badge orange">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
             </div>
           </div>
-          <canvas id="severityChart"></canvas>
-        </article>
+          <p class="support-text">Updated instantly with each refresh</p>
+        </section>
 
-        <article class="panel">
-          <div class="panel-header">
+        <section class="card best-seller-card">
+          <div class="card-header">
             <div>
-              <p class="panel-kicker">Operational pressure</p>
-              <h3>Wait time by department</h3>
+              <p class="eyebrow">Top Product Today</p>
+              <h2 id="bestSellingJuice">Orange Juice</h2>
+            </div>
+            <div class="icon-badge green">
+              <i class="fa-solid fa-trophy"></i>
             </div>
           </div>
-          <canvas id="waitChart"></canvas>
-        </article>
+          <p class="support-text" id="bestSellerUnits">0 units sold</p>
+        </section>
 
-        <article class="panel panel-wide">
-          <div class="panel-header">
+        <section class="card chart-card chart-wide">
+          <div class="section-title">
             <div>
-              <p class="panel-kicker">Resource utilization</p>
-              <h3>Bed occupancy by hospital</h3>
+              <p class="eyebrow">Last 7 Days</p>
+              <h3>Daily Sales Trend</h3>
             </div>
-            <p class="panel-note">Occupancy above 85% is considered constrained.</p>
           </div>
-          <canvas id="occupancyChart"></canvas>
-        </article>
-      </section>
+          <div class="chart-wrapper">
+            <canvas id="salesLineChart"></canvas>
+          </div>
+        </section>
 
-      <section class="feed-panel">
-        <div class="panel-header">
-          <div>
-            <p class="panel-kicker">Priority feed</p>
-            <h3>High-risk department watchlist</h3>
+        <section class="card chart-card">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Products</p>
+              <h3>Product-wise Sales</h3>
+            </div>
           </div>
-        </div>
-        <div id="feedList" class="feed-list"></div>
-      </section>
-    </main>
+          <div class="chart-wrapper">
+            <canvas id="productBarChart"></canvas>
+          </div>
+        </section>
+
+        <section class="card chart-card">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Categories</p>
+              <h3>Category Distribution</h3>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="categoryPieChart"></canvas>
+          </div>
+        </section>
+      </main>
+    </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
