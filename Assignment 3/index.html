@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shivam Juice Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+    <span>Shivam Juice Center</span>
+</div>
+
+
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero" id="home">
+
+    <div class="slider">
+        <div class="slides">
+            <img src="images/orange.jpg" class="slide active" alt="Orange Juice">
+            <img src="images/mango.jpg" class="slide" alt="Mango Juice">
+            <img src="images/watermelon.jpg" class="slide" alt="Watermelon Juice">
+            <img src="images/pineapple.jpg" class="slide" alt="Pineapple Juice">
+        </div>
+    </div>
+
+    <div class="hero-content">
+        <h1>Fresh • Natural • Healthy</h1>
+        <p>100% Freshly Squeezed Juices Everyday</p>
+        <button onclick="scrollToMenu()">Explore Menu</button>
+    </div>
+
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="menu">
+    <h2>Our Fresh Juices</h2>
+
+    <div class="product-grid">
+
+    <div class="card">
+        <img src="images/mango.png" alt="Mango Juice">
+        <h3>Mango</h3>
+        <p>₹40</p>
+        <button onclick="addToCart('Mango',40)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="images/orange.png" alt="Orange Juice">
+        <h3>Orange</h3>
+        <p>₹30</p>
+        <button onclick="addToCart('Orange',30)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="images/apple.png" alt="Apple Juice">
+        <h3>Apple</h3>
+        <p>₹50</p>
+        <button onclick="addToCart('Apple',50)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="images/pineapple.png" alt="Pineapple Juice">
+        <h3>Pineapple</h3>
+        <p>₹35</p>
+        <button onclick="addToCart('Pineapple',35)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="images/watermelon.png" alt="Watermelon Juice">
+        <h3>Watermelon</h3>
+        <p>₹25</p>
+        <button onclick="addToCart('Watermelon',25)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="images/muskmelon.png" alt="Muskmelon Juice">
+        <h3>Muskmelon</h3>
+        <p>₹30</p>
+        <button onclick="addToCart('Muskmelon',30)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="images/pomegranate.png" alt="Pomegranate Juice">
+        <h3>Pomegranate</h3>
+        <p>₹60</p>
+        <button onclick="addToCart('Pomegranate',60)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="images/mixedfruit.png" alt="Mixed Fruit Juice">
+        <h3>Mixed Fruit</h3>
+        <p>₹55</p>
+        <button onclick="addToCart('Mixed Fruit',55)">Add to Cart</button>
+    </div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+        Shivam Juice Center is dedicated to serving fresh, hygienic and healthy juices.
+        We use only premium quality fruits to deliver natural taste and freshness.
+        Our mission is to provide affordable and healthy beverages to everyone.
+    </p>
+</section>
+
+<!-- CART -->
+<div class="cart-panel" id="cart">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <p><strong>Total: ₹<span id="total">0</span></strong></p>
+    <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCheckout()">❌</span>
+        <h2>Checkout</h2>
+        <p>Total Amount: ₹<span id="checkoutTotal">0</span></p>
+        <button onclick="confirmOrder()">Confirm Order</button>
+    </div>
+</div>
+
+<footer>
+    © 2026 Shivam Juice Center | Pune
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
