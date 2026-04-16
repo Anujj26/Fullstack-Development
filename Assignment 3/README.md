@@ -1,4 +1,4 @@
-Juice Shop Web Application (E-Commerce Concept)
+## Juice Shop Web Application (E-Commerce Concept)
 
 This project is a simple front-end implementation of an e-commerce-style web application designed for a juice shop. It demonstrates how products can be displayed and managed using basic web technologies along with interactive cart functionality.
 
