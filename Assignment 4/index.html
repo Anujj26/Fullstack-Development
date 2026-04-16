@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Emergency Monitoring Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">mCityCare Network</p>
+        <h1>Emergency  Center</h1>
+        <p class="sidebar-copy">
+          Monitor patient load, admissions pressure, active emergency departments.
+        </p>
+      </div>
+
+      <div class="control-panel">
+        <div class="control-block">
+          <label for="hospitalSelect">Hospital</label>
+          <select id="hospitalSelect">
+            <option value="all">All hospitals</option>
+          </select>
+        </div>
+
+        <div class="control-block">
+          <label for="timeRange">Time range</label>
+          <input id="timeRange" type="range" min="6" max="24" step="6" value="24">
+          <div class="range-labels">
+            <span>6h</span>
+            <strong id="timeRangeValue">24h</strong>
+            <span>24h</span>
+          </div>
+        </div>
+
+        <div class="control-block">
+          <span class="control-title">Department focus</span>
+          <div class="chip-group" id="departmentFilters"></div>
+        </div>
+
+        <button class="ghost-button" id="refreshButton" type="button">Simulate Live Refresh</button>
+      </div>
+
+      <div class="alert-panel">
+        <p class="alert-kicker">Operational Alert</p>
+        <h2 id="alertTitle">Loading live triage insight...</h2>
+        <p id="alertCopy"></p>
+      </div>
+    </aside>
+
+    <main class="dashboard">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Real-time ED performance</p>
+          <h2>Hospital Emergency Monitoring Dashboard</h2>
+        </div>
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          Updated <span id="lastUpdated">just now</span>
+        </div>
+      </section>
+
+      <section class="stats-grid" id="statsGrid"></section>
+
+      <section class="charts-grid">
+        <article class="panel panel-wide">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Inbound flow</p>
+              <h3>Arrivals vs admissions</h3>
+            </div>
+            <p class="panel-note">Tracks emergency intake and beds converted to admissions.</p>
+          </div>
+          <canvas id="arrivalsChart"></canvas>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Patient mix</p>
+              <h3>Triage severity distribution</h3>
+            </div>
+          </div>
+          <canvas id="severityChart"></canvas>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Operational pressure</p>
+              <h3>Wait time by department</h3>
+            </div>
+          </div>
+          <canvas id="waitChart"></canvas>
+        </article>
+
+        <article class="panel panel-wide">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Resource utilization</p>
+              <h3>Bed occupancy by hospital</h3>
+            </div>
+            <p class="panel-note">Occupancy above 85% is considered constrained.</p>
+          </div>
+          <canvas id="occupancyChart"></canvas>
+        </article>
+      </section>
+
+      <section class="feed-panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Priority feed</p>
+            <h3>High-risk department watchlist</h3>
+          </div>
+        </div>
+        <div id="feedList" class="feed-list"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
