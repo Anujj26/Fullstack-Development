@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post an Ad | Used Items E-Commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">ReMarket</a>
+            <div class="nav-links" id="navLinks">
+                <!-- Dynamically populated by js/api.js -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Post an Ad</h2>
+            <form id="addProductForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required placeholder="e.g. iPhone 13 Pro 128GB">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price ($)</label>
+                    <input type="number" id="price" required min="1" placeholder="e.g. 500">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select a Category</option>
+                        <option value="Cars">Cars</option>
+                        <option value="Bikes">Bikes</option>
+                        <option value="Mobiles">Mobiles</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" required placeholder="Provide details about condition, usage, etc..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input type="file" id="image" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">Post Ad</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 ReMarket. All rights reserved.
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/add-product.js"></script>
+</body>
+</html>

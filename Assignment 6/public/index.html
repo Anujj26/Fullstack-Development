@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Items E-Commerce | ReMarket</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">ReMarket</a>
+            <div class="nav-links" id="navLinks">
+                <!-- Dynamically populated by js/api.js -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Buy and Sell with Confidence</h1>
+            <p>Find great deals on used cars, bikes, electronics, furniture, and more.</p>
+            
+            <form class="search-bar" id="searchForm">
+                <input type="text" id="searchInput" placeholder="What are you looking for?">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Cars">Cars</option>
+                    <option value="Bikes">Bikes</option>
+                    <option value="Mobiles">Mobiles</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </section>
+
+        <section>
+            <h2 style="margin-bottom: 2rem;">Fresh Recommendations</h2>
+            <div id="loadingIndicator" style="text-align: center; display: none;">Loading...</div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 ReMarket. All rights reserved.
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

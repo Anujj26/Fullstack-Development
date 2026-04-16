@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Used Items E-Commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">ReMarket</a>
+            <div class="nav-links" id="navLinks">
+                <!-- Dynamically populated by js/api.js -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-container" style="position: relative;">
+            <a href="index.html" style="position: absolute; top: 1rem; left: 1.5rem; text-decoration: none; color: var(--text-muted); font-size: 0.9rem;">&larr; Back</a>
+            <h2 style="text-align: center; margin-bottom: 2rem; margin-top: 1rem;">Create an Account</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="+1 234 567 8900">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Min 6 characters" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required placeholder="Confirm password" minlength="6">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">Create Account</button>
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    Already have an account? <a href="login.html">Login</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 ReMarket. All rights reserved.
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
